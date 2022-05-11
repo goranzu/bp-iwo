@@ -13,8 +13,9 @@
 </head>
 
 <body>
-    <h1>Hello, World</h1>
+    <h1 class="fs-xl">Hello, World</h1>
     <p>Setup font sizes.</p>
+    <p class="fs-300">Smaller text</p>
 </body>
 
 </html>
