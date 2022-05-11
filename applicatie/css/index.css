@@ -92,3 +92,21 @@ body {
 .fs-300 {
     font-size: var(--fs-300);
 }
+
+/**** Utils *******************************************/
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/**** Components *******************************************/
+
+.logo-text {
+    font-size: calc(var(--fs-400) * 1.5);
+}
+
+.container {
+    max-width: 1200px;
+    padding-left: 8px;
+    padding-right: 8px;
+}

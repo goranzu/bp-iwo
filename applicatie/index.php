@@ -9,13 +9,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
-    <title>Index</title>
+    <title>fletNIX</title>
 </head>
 
 <body>
-    <h1 class="fs-xl">Hello, World</h1>
-    <p>Setup font sizes.</p>
-    <p class="fs-300">Smaller text</p>
+    <div class="container">
+        <header>
+            <div>
+                <p class="logo-text">
+                    <a href="/">flet<span class="uppercase">nix</span></a>
+                </p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/register.php">Register</a></li>
+                    <li><a href="/about.php">About Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>TODO:</h1>
+        </main>
+
+        <footer>
+            <p>
+                <a href="/privacy.php">Privacy Statement</a>
+            </p>
+        </footer>
+    </div>
 </body>
 
 </html>
