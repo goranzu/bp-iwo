@@ -1,7 +1,9 @@
 # TODO
 
-Need docker to run the app.
+Docker is nodig.
 
 ```docker compose up```
 
-App runs on [http://localhost:8080](http://localhost:8080).
+App beschikbaar op [http://localhost:8080](http://localhost:8080).
+
+Source code in de applicatie folder.
