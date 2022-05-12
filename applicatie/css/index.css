@@ -83,6 +83,16 @@ body {
     :root {
         --fs-400: 1.125rem;
     }
+
+    .menu-btn {
+        display: flex;
+    }
+}
+
+/**** Utils *******************************************/
+
+.uppercase {
+    text-transform: uppercase;
 }
 
 .fs-xl {
@@ -93,10 +103,16 @@ body {
     font-size: var(--fs-300);
 }
 
-/**** Utils *******************************************/
-
-.uppercase {
-    text-transform: uppercase;
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 /**** Components *******************************************/
@@ -109,4 +125,57 @@ body {
     max-width: 1200px;
     padding-left: 8px;
     padding-right: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 0;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Geeft underline op hover aan links in de header behalve aan de logo */
+header a:hover:not(.logo-text a:hover) {
+    text-decoration: underline;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    gap: 16px;
+}
+
+.main-nav ul {
+    display: none;
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+}
+
+@media (min-width: 600px) {
+    .main-nav ul {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: none;
+    }
 }
