@@ -25,6 +25,7 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/register.php">Register</a></li>
                     <li><a href="/about.php">About Us</a></li>
+                    <li><a href="/contact.php">Contact</a></li>
                 </ul>
                 <button class="menu-btn" aria-labelledby="menu-btn-label">
                     <span id="menu-btn-label" class="sr-only">
@@ -39,7 +40,160 @@
         </header>
 
         <main>
-            <h1>TODO:</h1>
+            <section>
+                <div class="filter-controls">
+                    <div class="genre">
+                        <form action="/" method="post" class="genre-form">
+                            <label for="genre" class="sr-only">
+                                Genre:
+                            </label>
+                            <select id="genre">
+                                <option disabled selected value="">Genre</option>
+                                <option value="action">Action</option>
+                                <option value="action">Adventure</option>
+                                <option value="action">Comedy</option>
+                            </select>
+                            <input type="submit" value="Filter">
+                        </form>
+                    </div>
+                    <form action="/search" method="post" class="search">
+                        <label for="search">
+                            Search:
+                        </label>
+                        <input type="text" name="search" id="search">
+                    </form>
+                </div>
+            </section>
+
+            <section class="movie-overview">
+                <a href="/detail.php" class="card-link">
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="/images/batman.jpg" alt="batman" />
+                        </div>
+                        <div class="card-text">
+                            <p>Director: Matt Reeves</p>
+                            <p>Stars:
+                                <ul>
+                                    <li>Robert Pattinson</li>
+                                    <li>Zoe Kravitz</li>
+                                    <li>Jeffrey Wright</li>
+                                </ul>
+                            </p>
+                            <p>Duration: 180 minutes</p>
+                        </div>
+                    </article>
+                </a>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="/images/batman.jpg" alt="batman" />
+                    </div>
+
+                    <div class="card-text">
+                        <p>Director: Matt Reeves</p>
+                        <p>Stars:
+                            <ul>
+                                <li>Robert Pattinson</li>
+                                <li>Zoe Kravitz</li>
+                                <li>Jeffrey Wright</li>
+                            </ul>
+                        </p>
+                        <p>Duration: 180 minutes</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="/images/batman.jpg" alt="batman" />
+                    </div>
+
+                    <div class="card-text">
+                        <p>Director: Matt Reeves</p>
+                        <p>Stars:
+                            <ul>
+                                <li>Robert Pattinson</li>
+                                <li>Zoe Kravitz</li>
+                                <li>Jeffrey Wright</li>
+                            </ul>
+                        </p>
+                        <p>Duration: 180 minutes</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="/images/batman.jpg" alt="batman" />
+                    </div>
+
+                    <div class="card-text">
+                        <p>Director: Matt Reeves</p>
+                        <p>Stars:
+                            <ul>
+                                <li>Robert Pattinson</li>
+                                <li>Zoe Kravitz</li>
+                                <li>Jeffrey Wright</li>
+                            </ul>
+                        </p>
+                        <p>Duration: 180 minutes</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="/images/batman.jpg" alt="batman" />
+                    </div>
+
+                    <div class="card-text">
+                        <p>Director: Matt Reeves</p>
+                        <p>Stars:
+                            <ul>
+                                <li>Robert Pattinson</li>
+                                <li>Zoe Kravitz</li>
+                                <li>Jeffrey Wright</li>
+                            </ul>
+                        </p>
+                        <p>Duration: 180 minutes</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="/images/batman.jpg" alt="batman" />
+                    </div>
+
+                    <div class="card-text">
+                        <p>Director: Matt Reeves</p>
+                        <p>Stars:
+                            <ul>
+                                <li>Robert Pattinson</li>
+                                <li>Zoe Kravitz</li>
+                                <li>Jeffrey Wright</li>
+                            </ul>
+                        </p>
+                        <p>Duration: 180 minutes</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="/images/batman.jpg" alt="batman" />
+                    </div>
+
+                    <div class="card-text">
+                        <p>Director: Matt Reeves</p>
+                        <p>Stars:
+                            <ul>
+                                <li>Robert Pattinson</li>
+                                <li>Zoe Kravitz</li>
+                                <li>Jeffrey Wright</li>
+                            </ul>
+                        </p>
+                        <p>Duration: 180 minutes</p>
+                    </div>
+                </article>
+            </section>
+
         </main>
 
         <footer>
