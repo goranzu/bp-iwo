@@ -66,7 +66,28 @@
             </section>
 
             <section class="movie-overview">
-                <a href="/detail.php" class="card-link">
+                <h1 class="fs-xl">
+                    Movies Overview
+                </h1>
+                <div class="movie-grid">
+                    <a href="/detail.php" class="card-link">
+                        <article class="card">
+                            <div class="card-image">
+                                <img src="/images/batman.jpg" alt="batman" />
+                            </div>
+                            <div class="card-text">
+                                <p>Director: Matt Reeves</p>
+                                <p>Stars:
+                                    <ul>
+                                        <li>Robert Pattinson</li>
+                                        <li>Zoe Kravitz</li>
+                                        <li>Jeffrey Wright</li>
+                                    </ul>
+                                </p>
+                                <p>Duration: 180 minutes</p>
+                            </div>
+                        </article>
+                    </a>
                     <article class="card">
                         <div class="card-image">
                             <img src="/images/batman.jpg" alt="batman" />
@@ -83,115 +104,87 @@
                             <p>Duration: 180 minutes</p>
                         </div>
                     </article>
-                </a>
-
-                <article class="card">
-                    <div class="card-image">
-                        <img src="/images/batman.jpg" alt="batman" />
-                    </div>
-
-                    <div class="card-text">
-                        <p>Director: Matt Reeves</p>
-                        <p>Stars:
-                            <ul>
-                                <li>Robert Pattinson</li>
-                                <li>Zoe Kravitz</li>
-                                <li>Jeffrey Wright</li>
-                            </ul>
-                        </p>
-                        <p>Duration: 180 minutes</p>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image">
-                        <img src="/images/batman.jpg" alt="batman" />
-                    </div>
-
-                    <div class="card-text">
-                        <p>Director: Matt Reeves</p>
-                        <p>Stars:
-                            <ul>
-                                <li>Robert Pattinson</li>
-                                <li>Zoe Kravitz</li>
-                                <li>Jeffrey Wright</li>
-                            </ul>
-                        </p>
-                        <p>Duration: 180 minutes</p>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image">
-                        <img src="/images/batman.jpg" alt="batman" />
-                    </div>
-
-                    <div class="card-text">
-                        <p>Director: Matt Reeves</p>
-                        <p>Stars:
-                            <ul>
-                                <li>Robert Pattinson</li>
-                                <li>Zoe Kravitz</li>
-                                <li>Jeffrey Wright</li>
-                            </ul>
-                        </p>
-                        <p>Duration: 180 minutes</p>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image">
-                        <img src="/images/batman.jpg" alt="batman" />
-                    </div>
-
-                    <div class="card-text">
-                        <p>Director: Matt Reeves</p>
-                        <p>Stars:
-                            <ul>
-                                <li>Robert Pattinson</li>
-                                <li>Zoe Kravitz</li>
-                                <li>Jeffrey Wright</li>
-                            </ul>
-                        </p>
-                        <p>Duration: 180 minutes</p>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image">
-                        <img src="/images/batman.jpg" alt="batman" />
-                    </div>
-
-                    <div class="card-text">
-                        <p>Director: Matt Reeves</p>
-                        <p>Stars:
-                            <ul>
-                                <li>Robert Pattinson</li>
-                                <li>Zoe Kravitz</li>
-                                <li>Jeffrey Wright</li>
-                            </ul>
-                        </p>
-                        <p>Duration: 180 minutes</p>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image">
-                        <img src="/images/batman.jpg" alt="batman" />
-                    </div>
-
-                    <div class="card-text">
-                        <p>Director: Matt Reeves</p>
-                        <p>Stars:
-                            <ul>
-                                <li>Robert Pattinson</li>
-                                <li>Zoe Kravitz</li>
-                                <li>Jeffrey Wright</li>
-                            </ul>
-                        </p>
-                        <p>Duration: 180 minutes</p>
-                    </div>
-                </article>
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="/images/batman.jpg" alt="batman" />
+                        </div>
+                        <div class="card-text">
+                            <p>Director: Matt Reeves</p>
+                            <p>Stars:
+                                <ul>
+                                    <li>Robert Pattinson</li>
+                                    <li>Zoe Kravitz</li>
+                                    <li>Jeffrey Wright</li>
+                                </ul>
+                            </p>
+                            <p>Duration: 180 minutes</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="/images/batman.jpg" alt="batman" />
+                        </div>
+                        <div class="card-text">
+                            <p>Director: Matt Reeves</p>
+                            <p>Stars:
+                                <ul>
+                                    <li>Robert Pattinson</li>
+                                    <li>Zoe Kravitz</li>
+                                    <li>Jeffrey Wright</li>
+                                </ul>
+                            </p>
+                            <p>Duration: 180 minutes</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="/images/batman.jpg" alt="batman" />
+                        </div>
+                        <div class="card-text">
+                            <p>Director: Matt Reeves</p>
+                            <p>Stars:
+                                <ul>
+                                    <li>Robert Pattinson</li>
+                                    <li>Zoe Kravitz</li>
+                                    <li>Jeffrey Wright</li>
+                                </ul>
+                            </p>
+                            <p>Duration: 180 minutes</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="/images/batman.jpg" alt="batman" />
+                        </div>
+                        <div class="card-text">
+                            <p>Director: Matt Reeves</p>
+                            <p>Stars:
+                                <ul>
+                                    <li>Robert Pattinson</li>
+                                    <li>Zoe Kravitz</li>
+                                    <li>Jeffrey Wright</li>
+                                </ul>
+                            </p>
+                            <p>Duration: 180 minutes</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="/images/batman.jpg" alt="batman" />
+                        </div>
+                        <div class="card-text">
+                            <p>Director: Matt Reeves</p>
+                            <p>Stars:
+                                <ul>
+                                    <li>Robert Pattinson</li>
+                                    <li>Zoe Kravitz</li>
+                                    <li>Jeffrey Wright</li>
+                                </ul>
+                            </p>
+                            <p>Duration: 180 minutes</p>
+                        </div>
+                    </article>
+                </div>
             </section>
 
         </main>
