@@ -1,3 +1,18 @@
+<?php
+require_once 'db_connectie.php';
+
+$db = maakVerbinding();
+
+$allMoviesQuery = $db->query('SELECT * FROM Movie
+                     ORDER BY title;');
+// $movies = $query->fetchAll(PDO::FETCH_OBJ);
+
+// while ($r = $query->fetch(PDO::FETCH_OBJ)) {
+//     echo $r->title;
+// }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,7 +85,24 @@
                     Movies Overview
                 </h1>
                 <div class="movie-grid">
-                    <a href="/detail.php" class="card-link">
+                    <?php
+                    if ($allMoviesQuery->rowCount()) {
+                        while ($r = $allMoviesQuery->fetch(PDO::FETCH_OBJ)) {
+                            // echo '<p>' . $r->title . '</p>';
+                            echo "
+                                <article>
+                                    <div>
+                                        <h3>{$r->title}</h3>
+                                        <h3>{$r->cover_image}</h3>
+                                    </div>
+                                </article>
+                            ";
+                        }
+                    } else {
+                        echo '<p>No movies in database</p>';
+                    }
+                    ?>
+                    <!-- <a href="/detail.php" class="card-link">
                         <article class="card">
                             <div class="card-image">
                                 <img src="/images/batman.jpg" alt="batman" />
@@ -78,11 +110,11 @@
                             <div class="card-text">
                                 <p>Director: Matt Reeves</p>
                                 <p>Stars:
-                                    <ul>
-                                        <li>Robert Pattinson</li>
-                                        <li>Zoe Kravitz</li>
-                                        <li>Jeffrey Wright</li>
-                                    </ul>
+                                <ul>
+                                    <li>Robert Pattinson</li>
+                                    <li>Zoe Kravitz</li>
+                                    <li>Jeffrey Wright</li>
+                                </ul>
                                 </p>
                                 <p>Duration: 180 minutes</p>
                             </div>
@@ -95,11 +127,11 @@
                         <div class="card-text">
                             <p>Director: Matt Reeves</p>
                             <p>Stars:
-                                <ul>
-                                    <li>Robert Pattinson</li>
-                                    <li>Zoe Kravitz</li>
-                                    <li>Jeffrey Wright</li>
-                                </ul>
+                            <ul>
+                                <li>Robert Pattinson</li>
+                                <li>Zoe Kravitz</li>
+                                <li>Jeffrey Wright</li>
+                            </ul>
                             </p>
                             <p>Duration: 180 minutes</p>
                         </div>
@@ -111,11 +143,11 @@
                         <div class="card-text">
                             <p>Director: Matt Reeves</p>
                             <p>Stars:
-                                <ul>
-                                    <li>Robert Pattinson</li>
-                                    <li>Zoe Kravitz</li>
-                                    <li>Jeffrey Wright</li>
-                                </ul>
+                            <ul>
+                                <li>Robert Pattinson</li>
+                                <li>Zoe Kravitz</li>
+                                <li>Jeffrey Wright</li>
+                            </ul>
                             </p>
                             <p>Duration: 180 minutes</p>
                         </div>
@@ -127,11 +159,11 @@
                         <div class="card-text">
                             <p>Director: Matt Reeves</p>
                             <p>Stars:
-                                <ul>
-                                    <li>Robert Pattinson</li>
-                                    <li>Zoe Kravitz</li>
-                                    <li>Jeffrey Wright</li>
-                                </ul>
+                            <ul>
+                                <li>Robert Pattinson</li>
+                                <li>Zoe Kravitz</li>
+                                <li>Jeffrey Wright</li>
+                            </ul>
                             </p>
                             <p>Duration: 180 minutes</p>
                         </div>
@@ -143,11 +175,11 @@
                         <div class="card-text">
                             <p>Director: Matt Reeves</p>
                             <p>Stars:
-                                <ul>
-                                    <li>Robert Pattinson</li>
-                                    <li>Zoe Kravitz</li>
-                                    <li>Jeffrey Wright</li>
-                                </ul>
+                            <ul>
+                                <li>Robert Pattinson</li>
+                                <li>Zoe Kravitz</li>
+                                <li>Jeffrey Wright</li>
+                            </ul>
                             </p>
                             <p>Duration: 180 minutes</p>
                         </div>
@@ -159,11 +191,11 @@
                         <div class="card-text">
                             <p>Director: Matt Reeves</p>
                             <p>Stars:
-                                <ul>
-                                    <li>Robert Pattinson</li>
-                                    <li>Zoe Kravitz</li>
-                                    <li>Jeffrey Wright</li>
-                                </ul>
+                            <ul>
+                                <li>Robert Pattinson</li>
+                                <li>Zoe Kravitz</li>
+                                <li>Jeffrey Wright</li>
+                            </ul>
                             </p>
                             <p>Duration: 180 minutes</p>
                         </div>
@@ -175,16 +207,16 @@
                         <div class="card-text">
                             <p>Director: Matt Reeves</p>
                             <p>Stars:
-                                <ul>
-                                    <li>Robert Pattinson</li>
-                                    <li>Zoe Kravitz</li>
-                                    <li>Jeffrey Wright</li>
-                                </ul>
+                            <ul>
+                                <li>Robert Pattinson</li>
+                                <li>Zoe Kravitz</li>
+                                <li>Jeffrey Wright</li>
+                            </ul>
                             </p>
                             <p>Duration: 180 minutes</p>
                         </div>
                     </article>
-                </div>
+                </div> -->
             </section>
 
         </main>
