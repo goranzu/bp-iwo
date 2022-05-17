@@ -1,3 +1,11 @@
+<?php
+$movieTitle = $_GET["title"];
+
+// gebruik de title als input voor de database query.
+// let op capitalizatie etc...
+echo "<p>" . "movie title: " .  $movieTitle . "</p>";
+?>
+
 <html lang="en">
 
 <head>
