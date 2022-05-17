@@ -2,6 +2,7 @@
 require_once 'db_connectie.php';
 
 $db = maakVerbinding();
+$testThumbnailAmount = 10;
 
 $allMoviesQuery = $db->query('SELECT * FROM Movie
                      ORDER BY title;');
@@ -85,11 +86,11 @@ $allMoviesQuery = $db->query('SELECT * FROM Movie
                     Movies Overview
                 </h1>
                 <div class="movie-grid">
-                    <?php
-                    if ($allMoviesQuery->rowCount()) {
-                        while ($r = $allMoviesQuery->fetch(PDO::FETCH_OBJ)) {
-                            // echo '<p>' . $r->title . '</p>';
-                            echo "
+                    <!-- <?php
+                            if ($allMoviesQuery->rowCount()) {
+                                while ($r = $allMoviesQuery->fetch(PDO::FETCH_OBJ)) {
+                                    // echo '<p>' . $r->title . '</p>';
+                                    echo "
                                 <article>
                                     <div>
                                         <h3>{$r->title}</h3>
@@ -97,12 +98,14 @@ $allMoviesQuery = $db->query('SELECT * FROM Movie
                                     </div>
                                 </article>
                             ";
-                        }
-                    } else {
-                        echo '<p>No movies in database</p>';
-                    }
-                    ?>
-                    <!-- <a href="/detail.php" class="card-link">
+                                }
+                            } else {
+                                echo '<p>No movies in database</p>';
+                            }
+                            ?> -->
+                    <?php
+                    for ($i = 0; $i < $testThumbnailAmount; $i++) {
+                        echo '<a href="/detail.php?title=batman" class="card-link">
                         <article class="card">
                             <div class="card-image">
                                 <img src="/images/batman.jpg" alt="batman" />
@@ -119,104 +122,9 @@ $allMoviesQuery = $db->query('SELECT * FROM Movie
                                 <p>Duration: 180 minutes</p>
                             </div>
                         </article>
-                    </a>
-                    <article class="card">
-                        <div class="card-image">
-                            <img src="/images/batman.jpg" alt="batman" />
-                        </div>
-                        <div class="card-text">
-                            <p>Director: Matt Reeves</p>
-                            <p>Stars:
-                            <ul>
-                                <li>Robert Pattinson</li>
-                                <li>Zoe Kravitz</li>
-                                <li>Jeffrey Wright</li>
-                            </ul>
-                            </p>
-                            <p>Duration: 180 minutes</p>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <div class="card-image">
-                            <img src="/images/batman.jpg" alt="batman" />
-                        </div>
-                        <div class="card-text">
-                            <p>Director: Matt Reeves</p>
-                            <p>Stars:
-                            <ul>
-                                <li>Robert Pattinson</li>
-                                <li>Zoe Kravitz</li>
-                                <li>Jeffrey Wright</li>
-                            </ul>
-                            </p>
-                            <p>Duration: 180 minutes</p>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <div class="card-image">
-                            <img src="/images/batman.jpg" alt="batman" />
-                        </div>
-                        <div class="card-text">
-                            <p>Director: Matt Reeves</p>
-                            <p>Stars:
-                            <ul>
-                                <li>Robert Pattinson</li>
-                                <li>Zoe Kravitz</li>
-                                <li>Jeffrey Wright</li>
-                            </ul>
-                            </p>
-                            <p>Duration: 180 minutes</p>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <div class="card-image">
-                            <img src="/images/batman.jpg" alt="batman" />
-                        </div>
-                        <div class="card-text">
-                            <p>Director: Matt Reeves</p>
-                            <p>Stars:
-                            <ul>
-                                <li>Robert Pattinson</li>
-                                <li>Zoe Kravitz</li>
-                                <li>Jeffrey Wright</li>
-                            </ul>
-                            </p>
-                            <p>Duration: 180 minutes</p>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <div class="card-image">
-                            <img src="/images/batman.jpg" alt="batman" />
-                        </div>
-                        <div class="card-text">
-                            <p>Director: Matt Reeves</p>
-                            <p>Stars:
-                            <ul>
-                                <li>Robert Pattinson</li>
-                                <li>Zoe Kravitz</li>
-                                <li>Jeffrey Wright</li>
-                            </ul>
-                            </p>
-                            <p>Duration: 180 minutes</p>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <div class="card-image">
-                            <img src="/images/batman.jpg" alt="batman" />
-                        </div>
-                        <div class="card-text">
-                            <p>Director: Matt Reeves</p>
-                            <p>Stars:
-                            <ul>
-                                <li>Robert Pattinson</li>
-                                <li>Zoe Kravitz</li>
-                                <li>Jeffrey Wright</li>
-                            </ul>
-                            </p>
-                            <p>Duration: 180 minutes</p>
-                        </div>
-                    </article>
-                </div> -->
+                    </a>';
+                    }
+                    ?>
             </section>
 
         </main>
