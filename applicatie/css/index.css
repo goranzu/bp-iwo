@@ -84,6 +84,7 @@ body {
     font-size: var(--fs-400);
 }
 
+
 @media (min-width: 600px) {
     :root {
         --fs-400: 1.125rem;
@@ -296,4 +297,10 @@ header a:hover:not(.logo-text a:hover) {
     width: 100%;
     object-fit: cover;
     object-position: top;
+}
+
+footer {
+    margin-top: 32px;
+    padding: 32px 0;
+    text-align: center;
 }
