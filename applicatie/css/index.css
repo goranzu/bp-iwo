@@ -184,6 +184,10 @@ header a:hover:not(.logo-text a:hover) {
     display: none;
 }
 
+.main-nav ul li.active a {
+    text-decoration: underline;
+}
+
 .menu-btn {
     display: flex;
     align-items: center;

@@ -1,8 +1,20 @@
 <?php
 require_once 'db_connectie.php';
+require_once 'functions/getPage.php';
 
 $db = maakVerbinding();
 $testThumbnailAmount = 10;
+$currentPage = getCurrentPage();
+
+function template($type, $atts = [])
+{
+    $source = 'templates/' . $type;
+    if (file_exists($source)) {
+        extract($atts);
+        include $source;
+    }
+}
+
 
 $allMoviesQuery = $db->query('SELECT * FROM Movie
                      ORDER BY title;');
@@ -30,7 +42,7 @@ $allMoviesQuery = $db->query('SELECT * FROM Movie
 
 <body>
     <div class="container">
-        <header>
+       <header>
             <div>
                 <p class="logo-text">
                     <a href="/">flet<span class="uppercase">nix</span></a>
@@ -38,10 +50,10 @@ $allMoviesQuery = $db->query('SELECT * FROM Movie
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/register.php">Register</a></li>
-                    <li><a href="/about.php">About Us</a></li>
-                    <li><a href="/contact.php">Contact</a></li>
+                    <li class=<?php echo $currentPage === 'index.php' ? "active" : "inactive"; ?>><a href="/">Home</a></li>
+                    <li class=<?php echo $currentPage === 'register.php' ? "active" : "inactive"; ?>><a href="/register.php">Register</a></li>
+                    <li class=<?php echo $currentPage === 'about.php' ? "active" : "inactive"; ?>><a href="/about.php">About Us</a></li>
+                    <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li>
                 </ul>
                 <button class="menu-btn" aria-labelledby="menu-btn-label">
                     <span id="menu-btn-label" class="sr-only">
