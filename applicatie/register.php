@@ -13,6 +13,11 @@ $currentPage = getCurrentPage();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="css/index.css">
     <title>Register for fletNIX</title>
 </head>
@@ -44,7 +49,25 @@ $currentPage = getCurrentPage();
             </nav>
         </header>
 
-        <h1>Register Page</h1>
+        <main>
+
+            <form action="/register.php" method="post" class="register-form">
+                <h1 class="fs-xl">Create account</h1>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Create account</button>
+                </div>
+            </form>
+        </main>
     </div>
 </body>
 

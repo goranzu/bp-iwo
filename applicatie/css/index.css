@@ -74,7 +74,9 @@ select {
     /* FIXME: vind een andere oplossing voor dit!! */
     --fs-xl: clamp(2rem, 12vw + 1rem, 2rem);
 
-    --accent-100: hsl(80, 60%, 35%);
+    --accent-100: #118C8C;
+    /* --accent-100: #48CAD9; */
+    /* --accent-100: hsl(80, 60%, 35%); */
 
     --main-flow: 32px;
 }
@@ -152,6 +154,12 @@ body {
     padding-right: 8px;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media (min-width: 1220px) {
+    .container {
+        padding: 0;
+    }
 }
 
 header {
@@ -307,4 +315,52 @@ footer {
     margin-top: 32px;
     padding: 32px 0;
     text-align: center;
+}
+
+.register-form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 350px;
+}
+
+.register-form h1 {
+    font-size: 1.75rem;
+}
+
+.register-form>*+* {
+    margin-top: 16px;
+}
+
+.register-form button {
+    background-color: var(--accent-100);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 4px;
+}
+
+.form-group>*+* {
+    margin-top: 4px;
+}
+
+.about>section:first-of-type {
+    margin-top: 32px;
+}
+
+.about>section+section {
+    margin-top: 32px;
+}
+
+.about p {
+    max-width: 70ch;
 }
