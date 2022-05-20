@@ -15,6 +15,11 @@ $currentPage = getCurrentPage();
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="css/index.css">
     <title>About fletNIX</title>
 </head>
@@ -46,7 +51,28 @@ $currentPage = getCurrentPage();
             </nav>
         </header>
 
-        <h1>About page</h1>
+        <div class="container about">
+            <section>
+                <h1 class="fs-xl">
+                    About Us
+                </h1>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quod provident possimus voluptatem quidem neque qui, architecto quia est eligendi excepturi fugit a, officia quam? Vel deleniti in voluptates minima.
+                </p>
+
+            </section>
+
+            <section>
+                <h2>
+                    More info
+                </h2>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quo consequuntur magnam minus. Nemo, dolorem architecto enim dolorum aliquid rem harum quasi accusantium, natus quo nulla deserunt voluptas debitis quibusdam.
+                </p>
+            </section>
+        </div>
     </div>
 </body>
 

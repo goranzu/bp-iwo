@@ -1,6 +1,7 @@
 <?php
 require_once 'db_connectie.php';
 require_once 'functions/getPage.php';
+require_once 'data/movies.php';
 
 $db = maakVerbinding();
 $testThumbnailAmount = 10;
@@ -16,8 +17,10 @@ function template($type, $atts = [])
 }
 
 
-$allMoviesQuery = $db->query('SELECT * FROM Movie
-                     ORDER BY title;');
+$allMoviesQuery = getAllMovies($db);
+
+// var_dump($allMoviesQuery);
+
 // $movies = $query->fetchAll(PDO::FETCH_OBJ);
 
 // while ($r = $query->fetch(PDO::FETCH_OBJ)) {
@@ -36,13 +39,18 @@ $allMoviesQuery = $db->query('SELECT * FROM Movie
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="css/index.css">
     <title>fletNIX</title>
 </head>
 
 <body>
     <div class="container">
-       <header>
+        <header>
             <div>
                 <p class="logo-text">
                     <a href="/">flet<span class="uppercase">nix</span></a>
@@ -78,8 +86,8 @@ $allMoviesQuery = $db->query('SELECT * FROM Movie
                             <select id="genre">
                                 <option disabled selected value="">Genre</option>
                                 <option value="action">Action</option>
-                                <option value="action">Adventure</option>
-                                <option value="action">Comedy</option>
+                                <option value="adventure">Adventure</option>
+                                <option value="comedy">Comedy</option>
                             </select>
                             <input type="submit" value="Filter">
                         </form>
