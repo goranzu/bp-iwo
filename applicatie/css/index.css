@@ -338,6 +338,7 @@ footer {
     padding: 8px 16px;
     width: 100%;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .form-group label {

@@ -7,6 +7,9 @@ $db = maakVerbinding();
 $testThumbnailAmount = 10;
 $currentPage = getCurrentPage();
 
+$searchTerm = htmlspecialchars($_POST["searchTerm"] ?? "", ENT_QUOTES);
+$genre = htmlspecialchars($_POST["genre"] ?? "", ENT_QUOTES);
+
 function template($type, $atts = [])
 {
     $source = 'templates/' . $type;
@@ -15,7 +18,6 @@ function template($type, $atts = [])
         include $source;
     }
 }
-
 
 $allMoviesQuery = getAllMovies($db);
 
@@ -83,7 +85,7 @@ $allMoviesQuery = getAllMovies($db);
                             <label for="genre" class="sr-only">
                                 Genre:
                             </label>
-                            <select id="genre">
+                            <select id="genre" name="genre">
                                 <option disabled selected value="">Genre</option>
                                 <option value="action">Action</option>
                                 <option value="adventure">Adventure</option>
@@ -93,10 +95,10 @@ $allMoviesQuery = getAllMovies($db);
                         </form>
                     </div>
                     <form action="/search" method="post" class="search">
-                        <label for="search">
+                        <label for="searchTerm">
                             Search:
                         </label>
-                        <input type="text" name="search" id="search">
+                        <input type="text" name="searchTerm" id="searchTerm">
                     </form>
                 </div>
             </section>
