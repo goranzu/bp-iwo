@@ -33,9 +33,9 @@ $currentPage = getCurrentPage();
             <nav class="main-nav">
                 <ul>
                     <li class=<?php echo $currentPage === 'index.php' ? "active" : "inactive"; ?>><a href="/">Home</a></li>
-                    <li class=<?php echo $currentPage === 'register.php' ? "active" : "inactive"; ?>><a href="/register.php">Register</a></li>
                     <li class=<?php echo $currentPage === 'about.php' ? "active" : "inactive"; ?>><a href="/about.php">About Us</a></li>
                     <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li>
+                    <li class=<?php echo $currentPage === 'register.php' ? "active" : "inactive"; ?>><a href="/register.php">Register</a></li>
                 </ul>
                 <button class="menu-btn" aria-labelledby="menu-btn-label">
                     <span id="menu-btn-label" class="sr-only">
@@ -67,6 +67,10 @@ $currentPage = getCurrentPage();
                     <button type="submit">Create account</button>
                 </div>
             </form>
+
+            <p class="fs-300 fs-italic reg-link">
+                Already have an account? Click <a href="/login.php">here</a> to login.
+            </p>
         </main>
     </div>
 </body>
