@@ -1,7 +1,7 @@
 <?php
 require_once 'functions/getPage.php';
 
-$movieTitle = $_GET["title"];
+$movieTitle = htmlspecialchars($_GET["title"] ?? "", ENT_QUOTES);
 
 $currentPage = getCurrentPage();
 
