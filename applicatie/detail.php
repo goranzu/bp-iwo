@@ -7,7 +7,7 @@ $currentPage = getCurrentPage();
 
 // gebruik de title als input voor de database query.
 // let op capitalizatie etc...
-echo "<p>" . "movie title: " .  $movieTitle . "</p>";
+// echo "<p>" . "movie title: " .  $movieTitle . "</p>";
 ?>
 
 <html lang="en">
@@ -39,9 +39,9 @@ echo "<p>" . "movie title: " .  $movieTitle . "</p>";
             <nav class="main-nav">
                 <ul>
                     <li class=<?php echo $currentPage === 'index.php' ? "active" : "inactive"; ?>><a href="/">Home</a></li>
-                    <li class=<?php echo $currentPage === 'register.php' ? "active" : "inactive"; ?>><a href="/register.php">Register</a></li>
                     <li class=<?php echo $currentPage === 'about.php' ? "active" : "inactive"; ?>><a href="/about.php">About Us</a></li>
                     <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li>
+                    <li class=<?php echo $currentPage === 'register.php' ? "active" : "inactive"; ?>><a href="/register.php">Register</a></li>
                 </ul>
                 <button class="menu-btn" aria-labelledby="menu-btn-label">
                     <span id="menu-btn-label" class="sr-only">
@@ -54,7 +54,48 @@ echo "<p>" . "movie title: " .  $movieTitle . "</p>";
                     </svg> </button>
             </nav>
         </header>
-        <h1 class="fs-xl">Batman Pagina</h1>
+
+        <main>
+            <section class="movie-detail">
+                <div class="detail-image">
+                    <img src="/images/batman.jpg" alt="movie poster" />
+                </div>
+
+                <div class="detail-text">
+                    <div class="detail-heading">
+                        <div class="detail-title">
+                            <h1 class="fs-xl">Batman</h1>
+                            <span class="fs-300">(2022)</span>
+                        </div>
+                        <div class="detail-genre">
+                            <span class="genre-tag fs-300 fs-italic">Action</span>
+                            <span class="genre-tag fs-300 fs-italic">Adventure</span>
+                            <span class="genre-tag fs-300 fs-italic">Mystery</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-info">
+                        <div>
+                            <p class="fs-italic fs-300 f-clr-100">Director:</p>
+                            <p>Matt Reeves</p>
+                        </div>
+                        <p class="fs-italic fs-300 f-clr-100">Cast:</p>
+                        <ul>
+                            <li>Robert Pattinson</li>
+                            <li>Zoe Kravitz</li>
+                            <li>Jeffrey Wright</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-summary fs-300">
+                        <p class="fs-italic f-clr-100">Summary:</p>
+                        <p>
+                            When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 </body>
 
