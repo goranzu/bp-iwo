@@ -1,3 +1,12 @@
+<?php
+require_once 'functions/getPage.php';
+
+session_start();
+
+$currentPage = getCurrentPage();
+
+?>
+
 <html lang="en">
 
 <head>
@@ -19,31 +28,44 @@
 <body>
     <div class="container">
         <header>
-            <div>
+            <div class="logo">
                 <p class="logo-text">
                     <a href="/">flet<span class="uppercase">nix</span></a>
                 </p>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li class=<?php echo $currentPage === 'index.php' ? "active" : "inactive"; ?>><a href="/">Home</a></li>
-                    <li class=<?php echo $currentPage === 'register.php' ? "active" : "inactive"; ?>><a href="/register.php">Register</a></li>
-                    <li class=<?php echo $currentPage === 'about.php' ? "active" : "inactive"; ?>><a href="/about.php">About Us</a></li>
-                    <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li>
-                </ul>
-                <button class="menu-btn" aria-labelledby="menu-btn-label">
-                    <span id="menu-btn-label" class="sr-only">
-                        Open the mobile navigation menu.
-                    </span>
-                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg> </button>
-            </nav>
+            <?php
+            if (isset($_SESSION['email'])) {
+            ?>
+                <nav class="main-nav">
+                    <ul>
+                        <li class=<?php echo $currentPage === 'index.php' ? "active" : "inactive"; ?>><a href="/">Home</a></li>
+                        <li class=<?php echo $currentPage === 'about.php' ? "active" : "inactive"; ?>><a href="/about.php">About Us</a></li>
+                        <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li>
+                    </ul>
+                </nav>
+                <p class="fs-300 fs-italic id-email"><?= $_SESSION['email'] ?></p>
+            <?php
+            } else {
+            ?>
+                <nav class="main-nav">
+                    <ul>
+                        <li class=<?php echo $currentPage === 'index.php' ? "active" : "inactive"; ?>><a href="/">Home</a></li>
+                        <li class=<?php echo $currentPage === 'about.php' ? "active" : "inactive"; ?>><a href="/about.php">About Us</a></li>
+                        <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li>
+                        <li class=<?php
+                                    echo $currentPage === 'register.php' ? "active" : "inactive"; ?>>
+                            <a href="/register.php">Register</a>
+                        </li>
+                    </ul>
+                </nav>
+            <?php
+            }
+            ?>
         </header>
 
-        <h1>Privacy Page</h1>
+        <main class="privacy">
+            <h1>Privacy Page</h1>
+        </main>
     </div>
 </body>
 

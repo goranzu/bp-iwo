@@ -380,11 +380,11 @@ footer {
 }
 
 .about>section:first-of-type {
-    margin-top: 32px;
+    margin-top: var(--main-flow);
 }
 
 .about>section+section {
-    margin-top: 32px;
+    margin-top: var(--main-flow);
 }
 
 .about p {
@@ -456,4 +456,9 @@ footer {
 
 .id-email {
     font-size: 12px;
+}
+
+.privacy,
+.contact {
+    margin-top: var(--main-flow);
 }

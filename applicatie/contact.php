@@ -5,9 +5,8 @@ session_start();
 
 $currentPage = getCurrentPage();
 
-$email = $_SESSION['email'];
-
 ?>
+
 <html lang="en">
 
 <head>
@@ -35,7 +34,7 @@ $email = $_SESSION['email'];
                 </p>
             </div>
             <?php
-            if (isset($email)) {
+            if (isset($_SESSION['email'])) {
             ?>
                 <nav class="main-nav">
                     <ul>
@@ -44,7 +43,7 @@ $email = $_SESSION['email'];
                         <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li>
                     </ul>
                 </nav>
-                <p class="fs-300 fs-italic id-email"><?= $email ?></p>
+                <p class="fs-300 fs-italic id-email"><?= $_SESSION['email'] ?></p>
             <?php
             } else {
             ?>
@@ -64,7 +63,9 @@ $email = $_SESSION['email'];
             ?>
         </header>
 
-        <h1>About page</h1>
+        <main class="contact">
+            <h1>Contact Page</h1>
+        </main>
     </div>
 </body>
 
