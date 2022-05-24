@@ -182,11 +182,27 @@ body {
 }
 
 header {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0 24px;
+    /* display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 32px 0;
+    padding: 32px 0; */
 }
+
+header .id-email {
+    grid-column: 1 / -1;
+    justify-self: end;
+}
+
+header .logo {}
+
+header nav {
+    justify-self: end;
+}
+
 
 header a {
     text-decoration: none;
@@ -198,6 +214,8 @@ header a:hover:not(.logo-text a:hover) {
     text-decoration: underline;
 }
 
+header .main-nav {}
+
 .main-nav ul {
     list-style: none;
     margin: 0;
@@ -208,32 +226,12 @@ header a:hover:not(.logo-text a:hover) {
 }
 
 .main-nav ul {
-    display: none;
+    /* display: none; */
 }
 
 .main-nav ul li.active a {
     text-decoration: underline;
     font-weight: bold;
-}
-
-.menu-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-}
-
-@media (min-width: 600px) {
-    .main-nav ul {
-        display: flex;
-    }
-
-    .menu-btn {
-        display: none;
-    }
 }
 
 .filter-controls {
@@ -448,4 +446,14 @@ footer {
     text-align: center;
     margin-top: 32px;
     font-size: 14px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.id-email {
+    font-size: 12px;
 }
