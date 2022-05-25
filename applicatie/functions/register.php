@@ -6,6 +6,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 $_SESSION['email'] = $email;
-$_SESSION['password'] = $password;
+
+// save the user in database here`
 
 header('Location: /index.php');
