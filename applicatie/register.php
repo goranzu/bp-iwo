@@ -74,8 +74,23 @@ if (isset($_SESSION['email'])) {
             <form action="/functions/register.php" method="post" class="register-form">
                 <h1 class="fs-xl">Create account</h1>
                 <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" name="firstName" id="firstName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name="lastName" id="lastName" required>
+                </div>
+
+                <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" required>
                 </div>
 
                 <div class="form-group">
@@ -83,6 +98,32 @@ if (isset($_SESSION['email'])) {
                     <input type="password" name="password" id="password" required>
                 </div>
 
+                <div class="form-group">
+                    <label for="country">
+                        Country:
+                    </label>
+                    <select id="country" name="country" required>
+                        <option disabled selected value="">Country</option>
+                        <option value="nl">Netherlands</option>
+                        <option value="ba">Bosnia and Herzegovina</option>
+                        <option value="hr">Croatia</option>
+                    </select>
+                </div>
+
+                <div>
+                    <p>Gender:</p>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="male" value="m">
+                    <label for="femal">Female</label>
+                    <input type="radio" name="gender" id="femal" value="f">
+                </div>
+
+                <div class="form-group">
+                    <label for="birthDate">
+                        Birth Date:
+                    </label>
+                    <input type="date" name="birthDate" id="birthDate">
+                </div>
                 <div class="form-group">
                     <button type="submit">Create account</button>
                 </div>
