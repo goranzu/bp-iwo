@@ -39,7 +39,12 @@ require_once 'functions/setup.php';
                         <!-- <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li> -->
                     </ul>
                 </nav>
-                <p class="fs-300 fs-italic id-email"><?= $_SESSION['email'] ?></p>
+                <div class="user">
+                    <p class="fs-300 fs-italic id-email"><?= $_SESSION['email'] ?></p>
+                    <form action="/functions/logout.php" method="post">
+                        <button type="submit" class="logout-btn fs-300 fs-italic">Logout</button>
+                    </form>
+                </div>
             <?php
             } else {
             ?>

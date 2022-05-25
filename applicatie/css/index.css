@@ -108,6 +108,25 @@ body {
     color: inherit;
 }
 
+
+.privacy,
+.contact,
+.register,
+.login,
+.about {
+    margin-top: var(--main-flow);
+}
+
+body>.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
 /**** Utils *******************************************/
 
 .fs-italic {
@@ -194,9 +213,17 @@ header {
     padding: 32px 0; */
 }
 
-header .id-email {
+header .user {
     grid-column: 1 / -1;
     justify-self: end;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user button {
+    cursor: pointer;
 }
 
 header .logo {}
@@ -455,22 +482,4 @@ footer {
 
 .id-email {
     font-size: 12px;
-}
-
-.privacy,
-.contact,
-.register,
-.login,
-.about {
-    margin-top: var(--main-flow);
-}
-
-body>.container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
 }
