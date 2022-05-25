@@ -1,15 +1,12 @@
 <?php
+require_once 'functions/setup.php';
+
 require_once 'db_connectie.php';
-require_once 'functions/getPage.php';
 require_once 'data/movies.php';
 
-session_start();
-// cookie gebruiken voor GDPR?
-// plaats de sessie cookie alleen na toestemming van de gebruiker
 
 $db = maakVerbinding();
 $testThumbnailAmount = 10;
-$currentPage = getCurrentPage();
 
 $searchTerm = htmlspecialchars($_POST["searchTerm"] ?? "", ENT_QUOTES);
 $genre = htmlspecialchars($_POST["genre"] ?? "", ENT_QUOTES);
@@ -61,7 +58,7 @@ $allMoviesQuery = getAllMovies($db);
                     <ul>
                         <li class=<?php echo $currentPage === 'index.php' ? "active" : "inactive"; ?>><a href="/">Home</a></li>
                         <li class=<?php echo $currentPage === 'about.php' ? "active" : "inactive"; ?>><a href="/about.php">About Us</a></li>
-                        <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li>
+                        <!-- <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li> -->
                     </ul>
                 </nav>
                 <p class="fs-300 fs-italic id-email"><?= $_SESSION['email'] ?></p>
@@ -72,7 +69,7 @@ $allMoviesQuery = getAllMovies($db);
                     <ul>
                         <li class=<?php echo $currentPage === 'index.php' ? "active" : "inactive"; ?>><a href="/">Home</a></li>
                         <li class=<?php echo $currentPage === 'about.php' ? "active" : "inactive"; ?>><a href="/about.php">About Us</a></li>
-                        <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li>
+                        <!-- <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li> -->
                         <li class=<?php
                                     echo $currentPage === 'register.php' ? "active" : "inactive"; ?>>
                             <a href="/register.php">Register</a>

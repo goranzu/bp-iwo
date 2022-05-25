@@ -41,7 +41,7 @@ $currentPage = getCurrentPage();
                     <ul>
                         <li class=<?php echo $currentPage === 'index.php' ? "active" : "inactive"; ?>><a href="/">Home</a></li>
                         <li class=<?php echo $currentPage === 'about.php' ? "active" : "inactive"; ?>><a href="/about.php">About Us</a></li>
-                        <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li>
+                        <!-- <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li> -->
                     </ul>
                 </nav>
                 <p class="fs-300 fs-italic id-email"><?= $_SESSION['email'] ?></p>
@@ -52,7 +52,7 @@ $currentPage = getCurrentPage();
                     <ul>
                         <li class=<?php echo $currentPage === 'index.php' ? "active" : "inactive"; ?>><a href="/">Home</a></li>
                         <li class=<?php echo $currentPage === 'about.php' ? "active" : "inactive"; ?>><a href="/about.php">About Us</a></li>
-                        <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li>
+                        <!-- <li class=<?php echo $currentPage === 'contact.php' ? "active" : "inactive"; ?>><a href="/contact.php">Contact</a></li> -->
                         <li class=<?php
                                     echo $currentPage === 'register.php' ? "active" : "inactive"; ?>>
                             <a href="/register.php">Register</a>
