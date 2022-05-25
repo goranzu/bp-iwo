@@ -1,11 +1,7 @@
 <?php
-require_once 'functions/getPage.php';
-
-session_start();
+require_once 'functions/setup.php';
 
 $movieTitle = htmlspecialchars($_GET["title"] ?? "", ENT_QUOTES);
-
-$currentPage = getCurrentPage();
 
 // gebruik de title als input voor de database query.
 // let op capitalizatie etc...

@@ -1,9 +1,5 @@
 <?php
-require_once "functions/getPage.php";
-
-session_start();
-
-$currentPage = getCurrentPage();
+require_once 'functions/setup.php';
 
 if (isset($email)) {
     header('Location: index.php');
