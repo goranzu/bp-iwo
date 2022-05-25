@@ -60,7 +60,7 @@ require_once 'functions/setup.php';
             ?>
         </header>
 
-        <div class="container about">
+        <main class="about">
             <section>
                 <h1 class="fs-xl">
                     About Us
@@ -81,7 +81,7 @@ require_once 'functions/setup.php';
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quo consequuntur magnam minus. Nemo, dolorem architecto enim dolorum aliquid rem harum quasi accusantium, natus quo nulla deserunt voluptas debitis quibusdam.
                 </p>
             </section>
-        </div>
+        </main>
 
         <?php
         echoFooter();
