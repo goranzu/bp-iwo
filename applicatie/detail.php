@@ -64,52 +64,54 @@ $movieTitle = htmlspecialchars($_GET["title"] ?? "", ENT_QUOTES);
             ?>
         </header>
 
-        <main>
-            <section class="movie-detail">
-                <div class="detail-image">
-                    <img src="/images/batman.jpg" alt="movie poster" />
-                </div>
-
-                <div class="detail-text">
-                    <div class="detail-heading">
-                        <div class="detail-title">
-                            <h1 class="fs-xl">Batman</h1>
-                            <span class="fs-300">(2022)</span>
+        <div class="container">
+            <main>
+                <section class="movie-detail">
+                    <div class="detail-image">
+                        <img src="/images/batman.jpg" alt="movie poster" />
+                    </div>
+                    <div class="detail-text">
+                        <div class="detail-heading">
+                            <div class="detail-title">
+                                <h1 class="fs-xl">Batman</h1>
+                                <span class="fs-300">(2022)</span>
+                            </div>
+                            <div class="detail-genre">
+                                <span class="genre-tag fs-300 fs-italic">Action</span>
+                                <span class="genre-tag fs-300 fs-italic">Adventure</span>
+                                <span class="genre-tag fs-300 fs-italic">Mystery</span>
+                            </div>
                         </div>
-                        <div class="detail-genre">
-                            <span class="genre-tag fs-300 fs-italic">Action</span>
-                            <span class="genre-tag fs-300 fs-italic">Adventure</span>
-                            <span class="genre-tag fs-300 fs-italic">Mystery</span>
+                        <div class="detail-info">
+                            <div>
+                                <p class="fs-italic fs-300 f-clr-100">Director:</p>
+                                <p>Matt Reeves</p>
+                            </div>
+                            <p class="fs-italic fs-300 f-clr-100">Cast:</p>
+                            <ul>
+                                <li>Robert Pattinson</li>
+                                <li>Zoe Kravitz</li>
+                                <li>Jeffrey Wright</li>
+                            </ul>
+                        </div>
+                        <div class="detail-summary">
+                            <p class="fs-italic f-clr-100 fs-300">Summary:</p>
+                            <p>
+                                When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.
+                            </p>
+                        </div>
+                        <div class="detail-duration">
+                            <p class="fs-italic f-clr-100 fs-300">Duration:</p>
+                            <p>180 minutes</p>
                         </div>
                     </div>
+                </section>
+            </main>
 
-                    <div class="detail-info">
-                        <div>
-                            <p class="fs-italic fs-300 f-clr-100">Director:</p>
-                            <p>Matt Reeves</p>
-                        </div>
-                        <p class="fs-italic fs-300 f-clr-100">Cast:</p>
-                        <ul>
-                            <li>Robert Pattinson</li>
-                            <li>Zoe Kravitz</li>
-                            <li>Jeffrey Wright</li>
-                        </ul>
-                    </div>
-
-                    <div class="detail-summary">
-                        <p class="fs-italic f-clr-100 fs-300">Summary:</p>
-                        <p>
-                            When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.
-                        </p>
-                    </div>
-
-                    <div class="detail-duration">
-                        <p class="fs-italic f-clr-100 fs-300">Duration:</p>
-                        <p>180 minutes</p>
-                    </div>
-                </div>
-            </section>
-        </main>
+            <?php
+            echoFooter();
+            ?>
+        </div>
     </div>
 </body>
 

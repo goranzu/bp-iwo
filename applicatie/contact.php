@@ -62,6 +62,10 @@ require_once 'functions/setup.php';
         <main class="contact">
             <h1>Contact Page</h1>
         </main>
+
+        <?php
+        echoFooter();
+        ?>
     </div>
 </body>
 

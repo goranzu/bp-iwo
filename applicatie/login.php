@@ -87,6 +87,10 @@ if (isset($email)) {
                 Don't have an account yet? Click <a href="/register.php">here</a> to create one.
             </p>
         </main>
+
+        <?php
+        echoFooter();
+        ?>
     </div>
 </body>
 

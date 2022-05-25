@@ -82,6 +82,10 @@ require_once 'functions/setup.php';
                 </p>
             </section>
         </div>
+
+        <?php
+        echoFooter();
+        ?>
     </div>
 </body>
 

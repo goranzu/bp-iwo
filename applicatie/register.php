@@ -87,6 +87,10 @@ if (isset($email)) {
                 Already have an account? Click <a href="/login.php">here</a> to login.
             </p>
         </main>
+
+        <?php
+        echoFooter();
+        ?>
     </div>
 </body>
 

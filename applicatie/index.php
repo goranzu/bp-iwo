@@ -147,11 +147,9 @@ $allMoviesQuery = getAllMovies($db);
 
         </main>
 
-        <footer>
-            <p>
-                <a href="/privacy.php">Privacy Statement</a>
-            </p>
-        </footer>
+        <?php
+            echoFooter();
+        ?>
     </div>
 </body>
 

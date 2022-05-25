@@ -62,6 +62,10 @@ require_once 'functions/setup.php';
         <main class="privacy">
             <h1>Privacy Page</h1>
         </main>
+
+        <?php
+        echoFooter();
+        ?>
     </div>
 </body>
 
