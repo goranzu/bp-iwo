@@ -96,11 +96,16 @@ $movieTitle = htmlspecialchars($_GET["title"] ?? "", ENT_QUOTES);
                         </ul>
                     </div>
 
-                    <div class="detail-summary fs-300">
-                        <p class="fs-italic f-clr-100">Summary:</p>
+                    <div class="detail-summary">
+                        <p class="fs-italic f-clr-100 fs-300">Summary:</p>
                         <p>
                             When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.
                         </p>
+                    </div>
+
+                    <div class="detail-duration">
+                        <p class="fs-italic f-clr-100 fs-300">Duration:</p>
+                        <p>180 minutes</p>
                     </div>
                 </div>
             </section>
