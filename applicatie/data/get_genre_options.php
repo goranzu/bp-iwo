@@ -6,7 +6,7 @@ function get_genre_options($db)
     $query = $db->query($sql);
     $genre_options = '';
 
-    while ($r = $query->fetch()) {
+    while ($r = $query->fetch(PDO::FETCH_ASSOC)) {
         $genre_name = $r['genre_name'];
         $genre_options = $genre_options . '<option value="' . strtolower($genre_name) . '">' . $genre_name . '</option>';
     }
