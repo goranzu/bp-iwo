@@ -2,6 +2,7 @@
 require_once 'db_connectie.php';
 require_once 'functions/setup.php';
 require_once 'data/get_country_options.php';
+require_once 'data/get_payment_options.php';
 
 if (isset($_SESSION['email'])) {
     header('Location: index.php');
@@ -9,8 +10,8 @@ if (isset($_SESSION['email'])) {
 
 $db = maakVerbinding();
 
-
-$options = get_country_options($db);
+$country_options = get_country_options($db);
+$payment_options = get_payment_options($db);
 
 ?>
 
@@ -106,13 +107,25 @@ $options = get_country_options($db);
                 </div>
 
                 <div class="form-group">
+                    <label for="payment">
+                        Payment Method:
+                    </label>
+                    <select id="payment" name="payment" required>
+                        <option disabled selected value="">Select your payment method</option>
+                        <?php
+                        echo $payment_options;
+                        ?>
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label for="country">
                         Country:
                     </label>
                     <select id="country" name="country" required>
-                        <option disabled selected value="">Country</option>
+                        <option disabled selected value="">Select your country</option>
                         <?php
-                        echo $options;
+                        echo $country_options;
                         ?>
                     </select>
                 </div>
