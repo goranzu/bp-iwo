@@ -1,9 +1,16 @@
 <?php
+require_once 'db_connectie.php';
 require_once 'functions/setup.php';
+require_once 'data/get_country_options.php';
 
 if (isset($_SESSION['email'])) {
     header('Location: index.php');
 }
+
+$db = maakVerbinding();
+
+
+$options = get_country_options($db);
 
 ?>
 
@@ -104,9 +111,9 @@ if (isset($_SESSION['email'])) {
                     </label>
                     <select id="country" name="country" required>
                         <option disabled selected value="">Country</option>
-                        <option value="nl">Netherlands</option>
-                        <option value="ba">Bosnia and Herzegovina</option>
-                        <option value="hr">Croatia</option>
+                        <?php
+                        echo $options;
+                        ?>
                     </select>
                 </div>
 
