@@ -3,6 +3,7 @@ require_once 'functions/setup.php';
 
 require_once 'db_connectie.php';
 require_once 'data/movies.php';
+require_once 'data/get_genre_options.php';
 
 
 $db = maakVerbinding();
@@ -12,6 +13,8 @@ $searchTerm = htmlspecialchars($_POST["searchTerm"] ?? "", ENT_QUOTES);
 $genre = htmlspecialchars($_POST["genre"] ?? "", ENT_QUOTES);
 
 $allMoviesQuery = getAllMovies($db);
+$genre_options = get_genre_options($db);
+
 
 
 // var_dump($allMoviesQuery);
@@ -96,9 +99,9 @@ $allMoviesQuery = getAllMovies($db);
                             </label>
                             <select id="genre" name="genre">
                                 <option disabled selected value="">Genre</option>
-                                <option value="action">Action</option>
-                                <option value="adventure">Adventure</option>
-                                <option value="comedy">Comedy</option>
+                                <?php
+                                echo $genre_options;
+                                ?>
                             </select>
                             <input type="submit" value="Filter">
                         </form>
