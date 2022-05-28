@@ -4,6 +4,7 @@ require_once 'functions/setup.php';
 require_once 'db_connectie.php';
 require_once 'data/movies.php';
 require_once 'data/get_genre_options.php';
+require_once 'data/get_select_options.php';
 
 
 $db = maakVerbinding();
@@ -13,7 +14,9 @@ $searchTerm = htmlspecialchars($_POST["searchTerm"] ?? "", ENT_QUOTES);
 $genre = htmlspecialchars($_POST["genre"] ?? "", ENT_QUOTES);
 
 $allMoviesQuery = getAllMovies($db);
-$genre_options = get_genre_options($db);
+$genreSql = 'SELECT DISTINCT genre_name FROM Movie_Genre;';
+$genre_options = get_select_options($db, $genreSql, 'genre_name');
+// $genre_options = get_genre_options($db);
 
 
 
