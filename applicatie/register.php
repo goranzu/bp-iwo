@@ -134,8 +134,8 @@ $payment_options = get_payment_options($db);
                     <p>Gender:</p>
                     <label for="male">Male</label>
                     <input type="radio" name="gender" id="male" value="m">
-                    <label for="femal">Female</label>
-                    <input type="radio" name="gender" id="femal" value="f">
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="female" value="f">
                 </div>
 
                 <div class="form-group">
