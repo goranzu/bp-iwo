@@ -5,28 +5,42 @@ require_once 'db_connectie.php';
 require_once 'data/movies.php';
 require_once 'data/get_genre_options.php';
 require_once 'data/get_select_options.php';
-
+require_once 'views/movie_card.php';
+require_once 'data/get_filtered_movies.php';
 
 $db = maakVerbinding();
-$testThumbnailAmount = 10;
 
+// dit moet een get zijn, hetzelfde verhaal als $genre
 $searchTerm = htmlspecialchars($_POST["searchTerm"] ?? "", ENT_QUOTES);
-$genre = htmlspecialchars($_POST["genre"] ?? "", ENT_QUOTES);
 
-$allMoviesQuery = getAllMovies($db);
+$genre = htmlspecialchars($_GET["genre"] ?? "", ENT_QUOTES);
+
+
 $genreSql = 'SELECT DISTINCT genre_name FROM Movie_Genre;';
 $genre_options = get_select_options($db, $genreSql, 'genre_name');
-// $genre_options = get_genre_options($db);
 
+// film html maken
+$moviesQuery;
+$moviesHtml = '';
+$overviewOf = 'All Movies';
 
+if (strlen($genre) > 0) {
+    // dit is prepared statement omdat ik input van de gebruiker krijg
+    $moviesQuery = getFilterMoviesByGenre($db);
+    $moviesQuery->execute(array(
+        ':genre' => strtolower($genre)
+    ));
 
-// var_dump($allMoviesQuery);
+    $overviewOf = ucwords($genre);
+} else {
+    // hier gebruik geen gebruiker input maar haal alle films op
+    // daarom geen prepared statement
+    $moviesQuery = getAllMovies($db);
+}
 
-// $movies = $query->fetchAll(PDO::FETCH_OBJ);
-
-// while ($r = $query->fetch(PDO::FETCH_OBJ)) {
-//     echo $r->title;
-// }
+while ($r = $moviesQuery->fetch(PDO::FETCH_ASSOC)) {
+    $moviesHtml .= mainPageCard($r['movie_id'], str_replace('"', '', $r['title']), $r['publication_year']);
+}
 
 ?>
 
@@ -96,15 +110,13 @@ $genre_options = get_select_options($db, $genreSql, 'genre_name');
             <section>
                 <div class="filter-controls">
                     <div class="genre">
-                        <form action="/" method="post" class="genre-form">
+                        <form action="index.php" method="" class="genre-form">
                             <label for="genre" class="sr-only">
                                 Genre:
                             </label>
                             <select id="genre" name="genre">
                                 <option disabled selected value="">Genre</option>
-                                <?php
-                                echo $genre_options;
-                                ?>
+                                <?= $genre_options ?>
                             </select>
                             <input type="submit" value="Filter">
                         </form>
@@ -122,45 +134,15 @@ $genre_options = get_select_options($db, $genreSql, 'genre_name');
                 <h1 class="fs-xl">
                     Movies Overview
                 </h1>
+                <div class="overview">
+                    <?= $overviewOf ?>
+                </div>
                 <div class="movie-grid">
-                    <!-- <?php
-                            if ($allMoviesQuery->rowCount()) {
-                                while ($r = $allMoviesQuery->fetch(PDO::FETCH_OBJ)) {
-                                    // echo '<p>' . $r->title . '</p>';
-                                    echo "
-                                <article>
-                                    <div>
-                                        <h3>{$r->title}</h3>
-                                        <h3>{$r->cover_image}</h3>
-                                    </div>
-                                </article>
-                            ";
-                                }
-                            } else {
-                                echo '<p>No movies in database</p>';
-                            }
-                            ?> -->
-                    <?php
-                    for ($i = 0; $i < $testThumbnailAmount; $i++) {
-                        echo '<a href="/detail.php?title=batman" class="card-link">
-                        <article class="card">
-                            <div class="card-image">
-                                <img src="/images/batman.jpg" alt="batman" />
-                            </div>
-                            <div class="card-title">
-                                <h3>Batman</h3><span class="fs-300">(2022)</span>
-                            </div>
-                        </article>
-                    </a>';
-                    }
-                    ?>
+                    <?= $moviesHtml ?>
             </section>
 
         </main>
-
-        <?php
-        echoFooter();
-        ?>
+        <?= echoFooter() ?>
     </div>
 </body>
 
