@@ -1,11 +1,45 @@
 <?php
 require_once 'functions/setup.php';
+require_once 'db_connectie.php';
+require_once 'data/get_movie_detail.php';
 
-$movieTitle = htmlspecialchars($_GET["title"] ?? "", ENT_QUOTES);
+$db = maakVerbinding();
 
-// gebruik de title als input voor de database query.
-// let op capitalizatie etc...
-// echo "<p>" . "movie title: " .  $movieTitle . "</p>";
+$id = htmlspecialchars($_GET["id"] ?? "", ENT_QUOTES);
+
+$title;
+$publicationYear;
+$genres = array();
+$castMembers = array();
+$director;
+$description;
+$duration;
+
+if (strlen($id) < 1) {
+    header("Location: index.php");
+} else {
+    $moviePreparedStatement = getMovieDetail($db);
+    $moviePreparedStatement->execute(array(
+        ':id' => intval($id)
+    ));
+    while ($r = $moviePreparedStatement->fetch(PDO::FETCH_ASSOC)) {
+        $title = str_replace('"', '', $r['title']);
+        $publicationYear = $r['publication_year'] ?: 'unkown';
+        $director = $r['director'] ?: 'unkown';
+        $castMembers[] = $r['cast_member'] ?: 'unkown';
+        $description = $r['description'] ?: 'unkown';
+        $duration = $r['duration'] ?: 'unkown';
+
+        if (isset($r['genre_name'])) {
+            $genres[] = $r['genre_name'];
+        }
+    }
+
+    // remove duplicate if any
+    $genres = array_unique($genres);
+    $castMembers = array_unique($castMembers);
+}
+
 ?>
 
 <html lang="en">
@@ -78,36 +112,46 @@ $movieTitle = htmlspecialchars($_GET["title"] ?? "", ENT_QUOTES);
                     <div class="detail-text">
                         <div class="detail-heading">
                             <div class="detail-title">
-                                <h1 class="fs-xl">Batman</h1>
-                                <span class="fs-300">(2022)</span>
+                                <h1 class="fs-xl"><?= $title ?></h1>
+                                <span class="fs-300">(<?= $publicationYear ?>)</span>
                             </div>
-                            <div class="detail-genre">
-                                <span class="genre-tag fs-300 fs-italic">Action</span>
-                                <span class="genre-tag fs-300 fs-italic">Adventure</span>
-                                <span class="genre-tag fs-300 fs-italic">Mystery</span>
-                            </div>
+                            <?php
+                            if (count($genres) > 0) {
+                            ?>
+                                <div class="detail-genre">
+                                    <?php
+                                    foreach ($genres as $genre) {
+                                        echo '<span class="genre-tag fs-300 fs-italic">' . $genre . '</span>';
+                                    }
+                                    ?>
+                                </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                         <div class="detail-info">
                             <div>
                                 <p class="fs-italic fs-300 f-clr-100">Director:</p>
-                                <p>Matt Reeves</p>
+                                <p><?= $director ?></p>
                             </div>
                             <p class="fs-italic fs-300 f-clr-100">Cast:</p>
                             <ul>
-                                <li>Robert Pattinson</li>
-                                <li>Zoe Kravitz</li>
-                                <li>Jeffrey Wright</li>
+                                <?php
+                                foreach ($castMembers as $castMember) {
+                                    echo '<li>' . $castMember . '</li>';
+                                }
+                                ?>
                             </ul>
                         </div>
                         <div class="detail-summary">
                             <p class="fs-italic f-clr-100 fs-300">Summary:</p>
                             <p>
-                                When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.
+                                <?= $description ?>
                             </p>
                         </div>
                         <div class="detail-duration">
                             <p class="fs-italic f-clr-100 fs-300">Duration:</p>
-                            <p>180 minutes</p>
+                            <p><?= $duration ?> minutes</p>
                         </div>
                     </div>
                 </section>
