@@ -261,6 +261,10 @@ header .main-nav {}
     gap: 8px;
 }
 
+.detail-genre span+span {
+    margin-left: 4px;
+}
+
 footer {
     /* margin-top: auto; */
     margin-top: 32px;
