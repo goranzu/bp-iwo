@@ -7,11 +7,12 @@ require_once 'data/get_genre_options.php';
 require_once 'data/get_select_options.php';
 require_once 'views/movie_card.php';
 require_once 'data/get_filtered_movies.php';
+require_once 'data/movie_search.php';
 
 $db = maakVerbinding();
 
 // dit moet een get zijn, hetzelfde verhaal als $genre
-$searchTerm = htmlspecialchars($_POST["searchTerm"] ?? "", ENT_QUOTES);
+$title = htmlspecialchars($_GET["title"] ?? "", ENT_QUOTES);
 
 $genre = htmlspecialchars($_GET["genre"] ?? "", ENT_QUOTES);
 
@@ -32,6 +33,12 @@ if (strlen($genre) > 0) {
     ));
 
     $overviewOf = ucwords($genre);
+} else if (strlen($title) > 0) {
+    $moviesQuery = movieSearch($db);
+
+    $moviesQuery->execute(array(
+        ':title' => '%' . strtolower($title) . '%'
+    ));
 } else {
     // hier gebruik geen gebruiker input maar haal alle films op
     // daarom geen prepared statement
@@ -121,11 +128,11 @@ while ($r = $moviesQuery->fetch(PDO::FETCH_ASSOC)) {
                             <input type="submit" value="Filter">
                         </form>
                     </div>
-                    <form action="/search" method="post" class="search">
-                        <label for="searchTerm">
+                    <form action="index.php" method="" class="search">
+                        <label for="title">
                             Search:
                         </label>
-                        <input type="text" name="searchTerm" id="searchTerm">
+                        <input type="text" name="title" id="title">
                     </form>
                 </div>
             </section>
