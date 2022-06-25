@@ -75,7 +75,7 @@
             </main>
 
             <?php
-            echoFooter();
+            include('components/footer.php');
             ?>
         </div>
     </div>

@@ -56,7 +56,9 @@
             </section>
 
         </main>
-        <?= echoFooter() ?>
+        <?php
+        include('components/footer.php');
+        ?>
     </div>
 </body>
 
