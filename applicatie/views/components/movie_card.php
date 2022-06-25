@@ -1,6 +1,6 @@
 <?php
 
-function mainPageCard($id, $title, $publication_year)
+function main_page_card($id, $title, $publication_year)
 {
     $html = <<<"EOT"
     <a href="/detail.php?id=$id" class="card-link">

@@ -5,7 +5,7 @@ require_once 'db_connectie.php';
 require_once 'data/movies.php';
 require_once 'data/get_genre_options.php';
 require_once 'data/get_select_options.php';
-require_once 'views/movie_card.php';
+require_once 'views/components/movie_card.php';
 require_once 'data/get_filtered_movies.php';
 require_once 'data/movie_search.php';
 
@@ -46,7 +46,7 @@ if (strlen($genre) > 0) {
 }
 
 while ($r = $movies_query->fetch(PDO::FETCH_ASSOC)) {
-    $movies_html .= mainPageCard($r['movie_id'], str_replace('"', '', $r['title']), $r['publication_year']);
+    $movies_html .= main_page_card($r['movie_id'], str_replace('"', '', $r['title']), $r['publication_year']);
 }
 
 include('views/index_view.php');
