@@ -1,5 +1,6 @@
 <?php
-function getFilterMoviesByGenre($db) {
+function get_filter_movies_by_genre($db)
+{
     $prepared = $db->prepare('
         SELECT movie_id, title, publication_year
         FROM Movie

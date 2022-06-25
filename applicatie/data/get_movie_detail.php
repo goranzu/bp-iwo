@@ -1,6 +1,6 @@
 <?php
 
-function getMovieDetail($db)
+function get_movie_detail($db)
 {
     $prepared = $db->prepare("
     SELECT m.movie_id,

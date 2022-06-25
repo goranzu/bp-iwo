@@ -27,14 +27,14 @@ $overview_of = 'All Movies';
 
 if (strlen($genre) > 0) {
     // dit is prepared statement omdat ik input van de gebruiker krijg
-    $movies_query = getFilterMoviesByGenre($db);
+    $movies_query = get_filter_movies_by_genre($db);
     $movies_query->execute(array(
         ':genre' => strtolower($genre)
     ));
 
     $overview_of = ucwords($genre);
 } else if (strlen($title) > 0) {
-    $movies_query = movieSearch($db);
+    $movies_query = movie_search($db);
 
     $movies_query->execute(array(
         ':title' => '%' . strtolower($title) . '%'
@@ -42,7 +42,7 @@ if (strlen($genre) > 0) {
 } else {
     // hier gebruik geen gebruiker input maar haal alle films op
     // daarom geen prepared statement
-    $movies_query = getAllMovies($db);
+    $movies_query = get_all_movies($db);
 }
 
 while ($r = $movies_query->fetch(PDO::FETCH_ASSOC)) {

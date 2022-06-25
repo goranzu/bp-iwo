@@ -18,7 +18,7 @@ $duration;
 if (strlen($id) < 1) {
     header("Location: index.php");
 } else {
-    $movie_prepared_statement = getMovieDetail($db);
+    $movie_prepared_statement = get_movie_detail($db);
     $movie_prepared_statement->execute(array(
         ':id' => intval($id)
     ));
@@ -37,7 +37,7 @@ if (strlen($id) < 1) {
 
     // remove duplicate if any
     $genres = array_unique($genres);
-    $cast_members = array_unique($castMembers);
+    $cast_members = array_unique($cast_members);
 }
 
 

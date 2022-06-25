@@ -1,5 +1,5 @@
 <?php
-function movieSearch($db)
+function movie_search($db)
 {
     $prepared = $db->prepare("
         SELECT movie_id, title, publication_year

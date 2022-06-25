@@ -1,8 +1,8 @@
 <?php
 
-function getAllMovies($db)
+function get_all_movies($db)
 {
-    $allMoviesQuery = $db->query('SELECT movie_id, title, publication_year FROM Movie
+    $all_movies_query = $db->query('SELECT movie_id, title, publication_year FROM Movie
                      ORDER BY title;');
-    return $allMoviesQuery;
+    return $all_movies_query;
 }
