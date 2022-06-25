@@ -1,6 +1,6 @@
 <?php
 
-function getUrl()
+function get_url()
 {
     if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
         $url = "https://";

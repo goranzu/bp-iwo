@@ -1,6 +1,6 @@
 <?php
 require_once 'db_connectie.php';
-require_once 'functions/setup.php';
+require_once 'utils/setup.php';
 require_once 'data/get_country_options.php';
 require_once 'data/get_payment_options.php';
 

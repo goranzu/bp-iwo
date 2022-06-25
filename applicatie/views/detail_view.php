@@ -30,7 +30,7 @@
                         <div class="detail-heading">
                             <div class="detail-title">
                                 <h1 class="fs-xl"><?= $title ?></h1>
-                                <span class="fs-300">(<?= $publicationYear ?>)</span>
+                                <span class="fs-300">(<?= $publication_year ?>)</span>
                             </div>
                             <?php
                             if (count($genres) > 0) {
@@ -54,8 +54,8 @@
                             <p class="fs-italic fs-300 f-clr-100">Cast:</p>
                             <ul>
                                 <?php
-                                foreach ($castMembers as $castMember) {
-                                    echo '<li>' . $castMember . '</li>';
+                                foreach ($cast_members as $cast_member) {
+                                    echo '<li>' . $cast_member . '</li>';
                                 }
                                 ?>
                             </ul>

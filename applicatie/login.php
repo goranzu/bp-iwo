@@ -1,5 +1,5 @@
 <?php
-require_once 'functions/setup.php';
+require_once 'utils/setup.php';
 
 if (isset($_SESSION['email'])) {
     header('Location: index.php');

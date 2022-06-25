@@ -49,10 +49,10 @@
                     Movies Overview
                 </h1>
                 <div class="overview">
-                    <?= $overviewOf ?>
+                    <?= $overview_of ?>
                 </div>
                 <div class="movie-grid">
-                    <?= $moviesHtml ?>
+                    <?= $movies_html ?>
             </section>
 
         </main>

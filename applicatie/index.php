@@ -1,5 +1,5 @@
 <?php
-require_once 'functions/setup.php';
+require_once 'utils/setup.php';
 
 require_once 'db_connectie.php';
 require_once 'data/movies.php';
@@ -17,36 +17,36 @@ $title = htmlspecialchars($_GET["title"] ?? "", ENT_QUOTES);
 $genre = htmlspecialchars($_GET["genre"] ?? "", ENT_QUOTES);
 
 
-$genreSql = 'SELECT DISTINCT genre_name FROM Movie_Genre;';
-$genre_options = get_select_options($db, $genreSql, 'genre_name');
+$genre_sql = 'SELECT DISTINCT genre_name FROM Movie_Genre;';
+$genre_options = get_select_options($db, $genre_sql, 'genre_name');
 
 // film html maken
-$moviesQuery;
-$moviesHtml = '';
-$overviewOf = 'All Movies';
+$movies_query;
+$movies_html = '';
+$overview_of = 'All Movies';
 
 if (strlen($genre) > 0) {
     // dit is prepared statement omdat ik input van de gebruiker krijg
-    $moviesQuery = getFilterMoviesByGenre($db);
-    $moviesQuery->execute(array(
+    $movies_query = getFilterMoviesByGenre($db);
+    $movies_query->execute(array(
         ':genre' => strtolower($genre)
     ));
 
-    $overviewOf = ucwords($genre);
+    $overview_of = ucwords($genre);
 } else if (strlen($title) > 0) {
-    $moviesQuery = movieSearch($db);
+    $movies_query = movieSearch($db);
 
-    $moviesQuery->execute(array(
+    $movies_query->execute(array(
         ':title' => '%' . strtolower($title) . '%'
     ));
 } else {
     // hier gebruik geen gebruiker input maar haal alle films op
     // daarom geen prepared statement
-    $moviesQuery = getAllMovies($db);
+    $movies_query = getAllMovies($db);
 }
 
-while ($r = $moviesQuery->fetch(PDO::FETCH_ASSOC)) {
-    $moviesHtml .= mainPageCard($r['movie_id'], str_replace('"', '', $r['title']), $r['publication_year']);
+while ($r = $movies_query->fetch(PDO::FETCH_ASSOC)) {
+    $movies_html .= mainPageCard($r['movie_id'], str_replace('"', '', $r['title']), $r['publication_year']);
 }
 
 include('views/index_view.php');
