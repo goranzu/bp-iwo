@@ -19,7 +19,7 @@
             <p class="fs-300 fs-italic id-email">
                 <?= $_SESSION['email'] ?>
             </p>
-            <form action="/functions/logout.php" method="post">
+            <form action="/utils/handle_logout.php" method="post">
                 <button type="submit" class="logout-btn fs-300 fs-italic">Logout</button>
             </form>
         </div>

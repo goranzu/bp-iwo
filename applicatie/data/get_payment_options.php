@@ -9,7 +9,7 @@ function get_payment_options($db)
 
     while ($r = $query->fetch(PDO::FETCH_ASSOC)) {
         $method = $r['payment_method'];
-        $payment_options = $payment_options . '<option value="' . strtolower($method) . '">' . $method . '</option>';
+        $payment_options = $payment_options . '<option value="' . $method . '">' . $method . '</option>';
     }
 
     return $payment_options;

@@ -23,16 +23,25 @@
 
         <main class="register">
 
-            <form action="/functions/register.php" method="post" class="register-form">
+            <section class="contract-types">
+                <p>
+                    We have <?= $contract_types_amount ?> contract types that you can choose from.
+                </p>
+                <div class="types-row">
+                    <?= $contract_types_html ?>
+                </div>
+            </section>
+
+            <form action="/utils/handle_register.php" method="post" class="register-form">
                 <h1 class="fs-xl">Create account</h1>
                 <div class="form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" name="firstName" id="firstName" required>
+                    <input type="text" name="firstName" id="first_name" required>
                 </div>
 
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
-                    <input type="text" name="lastName" id="lastName" required>
+                    <input type="text" name="lastName" id="last_name" required>
                 </div>
 
                 <div class="form-group">
@@ -51,6 +60,23 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" name="confirm_password" id="confirm_password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contract">
+                        Contract Type:
+                    </label>
+                    <select id="contract" name="contract" required>
+                        <option disabled selected value="">Select your contract type</option>
+                        <?php
+                        echo $contract_type_options;
+                        ?>
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label for="payment">
                         Payment Method:
                     </label>
@@ -60,6 +86,13 @@
                         echo $payment_options;
                         ?>
                     </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="card_number">
+                        Card Number:
+                    </label>
+                    <input type="number" name="card_number" id="card_number" required>
                 </div>
 
                 <div class="form-group">
@@ -83,10 +116,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="birthDate">
+                    <label for="birth_date">
                         Birth Date:
                     </label>
-                    <input type="date" name="birthDate" id="birthDate">
+                    <input type="date" name="birth_date" id="birth_date">
                 </div>
                 <div class="form-group">
                     <button type="submit">Create account</button>

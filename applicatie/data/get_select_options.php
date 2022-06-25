@@ -7,7 +7,7 @@ function get_select_options($db, $sql, $column_name)
 
     while ($r = $query->fetch(PDO::FETCH_ASSOC)) {
         $value = $r[$column_name];
-        $options = $options . '<option value="' . strtolower($value) . '">' . $value . '</option>';
+        $options = $options . '<option value="' . $value . '">' . $value . '</option>';
     }
 
     return $options;

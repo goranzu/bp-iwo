@@ -9,7 +9,7 @@ function get_country_options($db)
 
     while ($r = $query->fetch(PDO::FETCH_ASSOC)) {
         $country_name = $r['country_name'];
-        $options = $options . '<option value="' . strtolower($country_name) . '">' . $country_name . '</option>';
+        $options = $options . '<option value="' . $country_name . '">' . $country_name . '</option>';
     }
 
     return $options;
