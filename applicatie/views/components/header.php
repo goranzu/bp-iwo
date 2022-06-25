@@ -35,6 +35,9 @@
                 <li class=<?php echo $current_page === 'register.php' ? "active" : "inactive"; ?>>
                     <a href="/register.php">Register</a>
                 </li>
+                <li class=<?php echo $current_page === 'login.php' ? "active" : "inactive"; ?>>
+                    <a href="/login.php">Login</a>
+                </li>
             </ul>
         </nav>
     <?php
